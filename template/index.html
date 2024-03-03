@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Price Prediction</title>
+</head>
+<body>
+    <h1>Product Price Prediction</h1>
+
+    <form method="post" action="{{ url_for('predict') }}">
+        <!-- Add your input fields here, matching the names in the Flask app -->
+        <label for="product_id">Product ID:</label>
+        <input type="text" name="product_id" required><br>
+
+        <label for="sale">Sale:</label>
+        <input type="text" id="sale" name="sale" required><br>
+
+        <label for="weight">Weight:</label>
+        <input type="text" id="weight" name="weight" required><br>
+
+        <label for="resolution">Resolution:</label>
+        <input type="text" id="resolution" name="resolution" required><br>
+
+        <label for="ppi">PPI:</label>
+        <input type="text" id="ppi" name="ppi" required><br>
+
+        <label for="cpu_core">Cpu_core:</label>
+        <input type="text" id="cpu_core" name="cpu_core" required><br>
+
+        <label for="cpu_freq">Cpu_freq:</label>
+        <input type="text" id="cpu_freq" name="cpu_freq" required><br>
+
+            
+        <label for="internal_mem">Internal_mem:</label>
+        <input type="text" id="internal_mem" name="internal_mem" required><br>
+
+        <label for="ram">RAM:</label>
+        <input type="text" id="ram" name="ram" required><br>
+
+        <label for="rear_cam">Rear_cam:</label>
+        <input type="text" id="rear_cam" name="rear_cam" required><br>
+
+        <label for="front_cam">Front_cam:</label>
+        <input type="text" id="front_cam" name="front_cam" required><br>
+
+        <label for="battery">Battery:</label>
+        <input type="text" id="battery" name="battery" required><br>
+        
+
+        <label for="thickness">Thickness:</label>
+        <input type="text" id="thickness" name="thickness" required><br>
+
+        <!-- Add other input fields similarly -->
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction %}
+        <p>Predicted Price: ${{ prediction }}</p>
+    {% endif %}
+</body>
+</html>
